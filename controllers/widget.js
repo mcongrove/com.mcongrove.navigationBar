@@ -1,11 +1,11 @@
 /**
  * The navigation bar widget
  * 
- * @class Widgets.com.chariti.navigationBar
+ * @class Widgets.com.mcongrove.navigationBar
  */
 
 /**
- * @member Widgets.com.chariti.navigationBar
+ * @member Widgets.com.mcongrove.navigationBar
  * @property {Object} CONFIG
  * @property {String} CONFIG.image The image to show in the navigation bar (optional)
  * @property {String} CONFIG.text The text to show in the navigation bar (optional)
@@ -20,18 +20,16 @@ if(CONFIG.image) {
 
 	if(image.exists()) {
 		image = image.nativePath;
-	} else {
-		image = "/data/" + CONFIG.image;
-	}
 
-	$.title = Ti.UI.createImageView({
-		image: image,
-		height: "26dp",
-		width: Ti.UI.SIZE,
-		top: (OS_IOS && deviceVersion >= 7) ? "30dp" : "10dp",
-		bottom: "10dp",
-		preventDefaultImage: true
-	});
+		$.title = Ti.UI.createImageView({
+			image: image,
+			height: "26dp",
+			width: Ti.UI.SIZE,
+			top: (OS_IOS && deviceVersion >= 7) ? "30dp" : "10dp",
+			bottom: "10dp",
+			preventDefaultImage: true
+		});
+	}
 } else {
 	$.title = Ti.UI.createLabel({
 		top: (OS_IOS && deviceVersion >= 7) ? "20dp" : "0dp",
@@ -121,70 +119,65 @@ $.showRight = function(_params) {
 
 /**
  * Shows the back button
- * @param {Object} _params
- * @param {Function} _params.callback The function to run on back button press
+ * @param {Function} _callback The function to run on back button press
  */
-$.showBack = function(_params) {
-	if(_params && typeof _params.callback !== "undefined") {
+$.showBack = function(_callback) {
+	if(_callback && typeof _callback !== "undefined") {
 		$.backImage.image = theme == "white" ? WPATH("/images/white/back.png") : WPATH("/images/black/back.png");
 		$.back.visible = true;
 
-		$.back.addEventListener("click", _params.callback);
+		$.back.addEventListener("click", _callback);
 	}
 };
 
 /**
  * Shows the next button
- * @param {Object} _params
- * @param {Function} _params.callback The function to run on next button press
+ * @param {Function} _callback The function to run on next button press
  */
-$.showNext = function(_params) {
-	if(_params && typeof _params.callback !== "undefined") {
+$.showNext = function(_callback) {
+	if(_callback && typeof _callback !== "undefined") {
 		$.nextImage.image = theme == "white" ? WPATH("/images/white/next.png") : WPATH("/images/black/next.png");
 		$.next.visible = true;
 
-		$.next.addEventListener("click", _params.callback);
+		$.next.addEventListener("click", _callback);
 	}
 };
 
 /**
  * Shows the menu button
- * @param {Object} _params
- * @param {Function} _params.callback The function to run on action button press
+ * @param {Function} _callback The function to run on action button press
  */
-$.showMenu = function(_params) {
-	if(_params && typeof _params.callback !== "undefined") {
+$.showMenu = function(_callback) {
+	if(_callback && typeof _callback !== "undefined") {
 		$.showLeft({
 			image: theme == "white" ? WPATH("/images/white/menu.png") : WPATH("/images/black/menu.png"),
-			callback: _params.callback
+			callback: _callback
 		});
 	}
 };
 
 /**
  * Shows the settings button
- * @param {Object} _params
- * @param {Function} _params.callback The function to run on action button press
+ * @param {Function} _callback The function to run on action button press
  */
-$.showSettings = function(_params) {
-	if(_params && typeof _params.callback !== "undefined") {
+$.showSettings = function(_callback) {
+	if(_callback && typeof _callback !== "undefined") {
 		$.showRight({
 			image: theme == "white" ? WPATH("/images/white/settings.png") : WPATH("/images/black/settings.png"),
-			callback: _params.callback
+			callback: _callback
 		});
 	}
 };
 
 /**
  * Shows the action button
- * @param {Object} _params
- * @param {Function} _params.callback The function to run on action button press
+ * @param {Function} _callback The function to run on action button press
  */
-$.showAction = function(_params) {
-	if(_params && typeof _params.callback !== "undefined") {
+$.showAction = function(_callback) {
+	if(_callback && typeof _callback !== "undefined") {
 		$.showRight({
 			image: theme == "white" ? WPATH("/images/white/action.png") : WPATH("/images/black/action.png"),
-			callback: _params.callback
+			callback: _callback
 		});
 	}
 };
