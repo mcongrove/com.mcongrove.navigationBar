@@ -5,19 +5,49 @@ A custom NavigationBar widget for Titanium Alloy.
 Example Usage
 -------------
 
-	Coming Soon
+###### Alloy View (XML)
+
+	<Require type="widget" src="com.mcongrove.navigationBar" id="NavigationBar" image="/images/logo.png" />
+	
+###### Alloy Controller (JS)
+
+	$.NavigationBar.setBackgroundColor("#35ABFF");
+	
+	$.NavigationBar.showBack(
+		function(_event) {
+			closeWindow();
+		}
+	);
+	
+	$.NavigationBar.showRight({
+		image: "/images/myRightButton.png",
+		callback: function() {
+			doSomething();
+		}
+	});
 
 Options
 -------
-Parameter   | Type        | Default 
-------------|-------------|------------
-Coming Soon | Coming Soon | Coming Soon
+Parameter | Type    | Default |
+----------|---------|---------|
+image     | `String` | null    |
+text      | `String` | null    |
 
 Methods
 -------
-Function    | Parameters  | Description 
-------------|-------------|------------
-Coming Soon | Coming Soon | Coming Soon
+Function           | Parameters   | Description 
+-------------------|--------------|------------
+addNavigation      | `View`       | Adds [detail navigation widget](https://github.com/mcongrove/com.mcongrove.detailNavigation)
+removeNavigation   |              | Removes [detail navigation widget](https://github.com/mcongrove/com.mcongrove.detailNavigation)
+setBackgroundColor | `String`     | Background color
+setTitle           | `String`     | Title bar text
+showLeft           | `Object`     | `callback`: Click callback, `image`: Image to add
+showRight          | `Object`     | `callback`: Click callback, `image`: Image to add
+showBack           | `Function`   | Click callback
+showNext           | `Function`   | Click callback
+showMenu           | `Function`   | Click callback
+showSettings       | `Function`   | Click callback
+showAction         | `Function`   | Click callback
 
 Changelog
 ---------
