@@ -16,7 +16,7 @@ var navigation, theme;
 var deviceVersion = parseInt(Titanium.Platform.version.split(".")[0], 10);
 
 if(CONFIG.image) {
-	var image = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, CONFIG.image);
+	var image = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, CONFIG.image);
 
 	if(image.exists()) {
 		image = image.nativePath;
@@ -259,7 +259,9 @@ function hexToHsb(_hex) {
 	return hsb;
 }
 
-$.Wrapper.add($.title);
+if($.title) {
+	$.Wrapper.add($.title);
+}
 
 // Move the UI down if iOS7+
 if(OS_IOS && deviceVersion >= 7) {
