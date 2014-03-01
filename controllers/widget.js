@@ -260,7 +260,7 @@ function hexToHsb(_hex) {
 }
 
 if($.title) {
-	$.Wrapper.add($.title);
+	$.titleView.add($.title);
 }
 
 // Move the UI down if iOS7+
