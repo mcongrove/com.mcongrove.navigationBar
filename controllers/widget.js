@@ -16,20 +16,14 @@ var navigation, theme;
 var deviceVersion = parseInt(Titanium.Platform.version.split(".")[0], 10);
 
 if(CONFIG.image) {
-	var image = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, CONFIG.image);
-
-	if(image.exists()) {
-		image = image.nativePath;
-
-		$.title = Ti.UI.createImageView({
-			image: image,
-			height: "26dp",
-			width: Ti.UI.SIZE,
-			top: (OS_IOS && deviceVersion >= 7) ? "30dp" : "10dp",
-			bottom: "10dp",
-			preventDefaultImage: true
-		});
-	}
+	$.title = Ti.UI.createImageView({
+		image: CONFIG.image,
+		height: "26dp",
+		width: Ti.UI.SIZE,
+		top: (OS_IOS && deviceVersion >= 7) ? "30dp" : "10dp",
+		bottom: "10dp",
+		preventDefaultImage: true
+	});
 } else {
 	$.title = Ti.UI.createLabel({
 		top: (OS_IOS && deviceVersion >= 7) ? "20dp" : "0dp",
