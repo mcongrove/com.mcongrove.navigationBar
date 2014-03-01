@@ -75,7 +75,7 @@ $.setBackgroundColor = function(_color) {
 	if(hexToHsb(_color).b < 65) {
 		theme = "white";
 	} else {
-		theme = "black"
+		theme = "black";
 	}
 };
 
