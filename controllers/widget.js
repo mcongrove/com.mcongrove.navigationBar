@@ -87,6 +87,14 @@ $.setTitle = function(_text) {
 };
 
 /**
+ * Sets the right label text
+ * @param {Object} _text The right label text
+ */
+$.setRightLabelText = function(_text) {
+	$.rightLabel.text = _text;
+};
+
+/**
  * Shows the left button
  * @param {Object} _params
  * @param {Function} _params.callback The function to run on left button press
@@ -110,7 +118,13 @@ $.showLeft = function(_params) {
 $.showRight = function(_params) {
 	if(_params && typeof _params.callback !== "undefined") {
 		$.right.visible = true;
-		$.rightImage.image = _params.image;
+		if (_params.image) {
+			$.rightImage.image = _params.image;
+			$.rightImage.visible = true;
+		} else {
+			$.rightLabel.text = _params.text;
+			$.rightLabel.visible = true;
+		}
 
 		$.right.addEventListener("click", _params.callback);
 	}
