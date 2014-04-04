@@ -61,15 +61,20 @@ $.removeNavigation = function() {
 /**
  * Sets the background color
  * @param {Object} _color The hex color code (e.g. "#FFF")
+ * @param {Object} _theme The theme to set manually (e.g. "white" or "black")
  */
-$.setBackgroundColor = function(_color) {
+$.setBackgroundColor = function(_color, _theme) {
 	$.Wrapper.backgroundColor = _color;
 
-	// Checks the brightness of the background color, sets color of icons/text
-	if(hexToHsb(_color).b < 65) {
-		theme = "white";
+	if (_theme) {
+		theme = _theme;
 	} else {
-		theme = "black";
+		// Checks the brightness of the background color, sets color of icons/text
+		if(hexToHsb(_color).b < 65) {
+			theme = "white";
+		} else {
+			theme = "black";
+		}
 	}
 };
 
