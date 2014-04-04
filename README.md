@@ -8,17 +8,17 @@ Example Usage
 ###### Alloy View (XML)
 
 	<Require type="widget" src="com.mcongrove.navigationBar" id="NavigationBar" image="/images/logo.png" />
-	
+
 ###### Alloy Controller (JS)
 
 	$.NavigationBar.setBackgroundColor("#35ABFF");
-	
+
 	$.NavigationBar.showBack(
 		function(_event) {
 			closeWindow();
 		}
 	);
-	
+
 	$.NavigationBar.showRight({
 		image: "/images/myRightButton.png",
 		callback: function() {
@@ -35,11 +35,12 @@ text      | `String` | null    |
 
 Methods
 -------
-Function           | Parameters   | Description 
+Function           | Parameters   | Description
 -------------------|--------------|------------
 addNavigation      | `View`       | Adds [detail navigation widget](https://github.com/mcongrove/com.mcongrove.detailNavigation)
 removeNavigation   |              | Removes [detail navigation widget](https://github.com/mcongrove/com.mcongrove.detailNavigation)
-setBackgroundColor | `String`, `String`     | Background color, Theme color ("black" | "white") _(optional)_
+setAppearance      | `Object`     | `backgroundColor`: Background color, `theme`: Theme color _(optional)_, `hideShadow`: Boolean _(optional)_
+setBackgroundColor | `String`     | Background color
 setTitle           | `String`     | Title bar text
 showLeft           | `Object`     | `callback`: Click callback, `image`: Image to add
 showRight          | `Object`     | `callback`: Click callback, `image`: Image to add

@@ -5,7 +5,7 @@
 	height: "47dp",
 	backgroundColor: "#000"
 },
-"#border": {
+"#shadow": {
 	bottom: "0dp",
 	height: "1dp",
 	width: Ti.UI.FILL,

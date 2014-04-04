@@ -59,28 +59,51 @@ $.removeNavigation = function() {
 };
 
 /**
- * Sets the background color
- * @param {Object} _color The hex color code (e.g. "#FFF")
- * @param {Object} _theme The theme to set manually (e.g. "white" or "black")
+ * Set the navigation bar's appearance
+ * @param {Object} _params
+ * @param {String} _params.backgroundColor The hex color code (e.g. "#FFF")
+ * @param {String} _params.theme Theme color ("black" | "white") (optional)
+ * @param {Boolean} _params.hideShadow Whether or not to hide the bottom shadow (optional)
  */
-$.setBackgroundColor = function(_color, _theme) {
-	$.Wrapper.backgroundColor = _color;
+$.setAppearance = function(_params) {
+	$.Wrapper.backgroundColor = _params.backgroundColor;
 
-	if (_theme) {
-		theme = _theme;
-	} else {
-		// Checks the brightness of the background color, sets color of icons/text
-		if(hexToHsb(_color).b < 65) {
-			theme = "white";
+	if (_params) {
+		if (_params.theme) {
+			theme = _params.theme;
 		} else {
-			theme = "black";
+			// Checks the brightness of the background color, sets color of icons/text
+			if(hexToHsb(_params.backgroundColor).b < 65) {
+				theme = "white";
+			} else {
+				theme = "black";
+			}
+		}
+		
+		if (_params.hideShadow) {
+			$.shadow.visible = false;
 		}
 	}
 };
 
 /**
+ * Sets the background color
+ * @param {String} _color The hex color code (e.g. "#FFF")
+ */
+$.setBackgroundColor = function(_color) {
+	$.Wrapper.backgroundColor = _color;
+	
+	// Checks the brightness of the background color, sets color of icons/text
+	if(hexToHsb(_color).b < 65) {
+		theme = "white";
+	} else {
+		theme = "black";
+	}
+};
+
+/**
  * Sets the title
- * @param {Object} _text The title text
+ * @param {String} _text The title text
  */
 $.setTitle = function(_text) {
 	$.title.text = _text;

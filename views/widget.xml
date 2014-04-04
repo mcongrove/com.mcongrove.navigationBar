@@ -20,6 +20,6 @@
 			</View>
 		</View>
 		
-		<View id="border" />
+		<View id="shadow" />
 	</View>
 </Alloy>
