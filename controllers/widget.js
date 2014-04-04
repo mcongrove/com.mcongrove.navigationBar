@@ -60,27 +60,35 @@ $.removeNavigation = function() {
 
 /**
  * Sets the background color
- * @param {Object} _color The hex color code (e.g. "#FFF")
- * @param {Object} _theme The theme to set manually (e.g. "white" or "black")
+ * @param {String} _color The hex color code (e.g. "#FFF")
+ * @param {Object} _params
+ * @param {String} _params.theme Theme color ("black" | "white") (optional)
+ * @param {Boolean} _params.hideShadow Whether or not to hide the bottom shadow (optional)
  */
-$.setBackgroundColor = function(_color, _theme) {
+$.setBackgroundColor = function(_color, _params) {
 	$.Wrapper.backgroundColor = _color;
 
-	if (_theme) {
-		theme = _theme;
-	} else {
-		// Checks the brightness of the background color, sets color of icons/text
-		if(hexToHsb(_color).b < 65) {
-			theme = "white";
+	if (_params) {
+		if (_params.theme) {
+			theme = _params.theme;
 		} else {
-			theme = "black";
+			// Checks the brightness of the background color, sets color of icons/text
+			if(hexToHsb(_color).b < 65) {
+				theme = "white";
+			} else {
+				theme = "black";
+			}
+		}
+		
+		if (_params.hideShadow) {
+			$.shadow.visible = false;
 		}
 	}
 };
 
 /**
  * Sets the title
- * @param {Object} _text The title text
+ * @param {String} _text The title text
  */
 $.setTitle = function(_text) {
 	$.title.text = _text;

@@ -39,7 +39,7 @@ Function           | Parameters   | Description
 -------------------|--------------|------------
 addNavigation      | `View`       | Adds [detail navigation widget](https://github.com/mcongrove/com.mcongrove.detailNavigation)
 removeNavigation   |              | Removes [detail navigation widget](https://github.com/mcongrove/com.mcongrove.detailNavigation)
-setBackgroundColor | `String`, `String`     | Background color, Theme color ("black" | "white") _(optional)_
+setBackgroundColor | `String`, `Object`     | Background color, Object: `theme`: Theme color ("black" | "white") _(optional)_, `hideShadow`: Whether or not to hide the bottom shadow _(optional)_
 setTitle           | `String`     | Title bar text
 showLeft           | `Object`     | `callback`: Click callback, `image`: Image to add
 showRight          | `Object`     | `callback`: Click callback, `image`: Image to add
