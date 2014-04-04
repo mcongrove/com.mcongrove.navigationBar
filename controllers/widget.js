@@ -20,13 +20,13 @@ if(CONFIG.image) {
 		image: CONFIG.image,
 		height: "26dp",
 		width: Ti.UI.SIZE,
-		top: (OS_IOS && deviceVersion >= 7) ? "30dp" : "10dp",
+		top: "10dp",
 		bottom: "10dp",
 		preventDefaultImage: true
 	});
 } else {
 	$.title = Ti.UI.createLabel({
-		top: (OS_IOS && deviceVersion >= 7) ? "20dp" : "0dp",
+		top: "0dp",
 		left: "58dp",
 		right: "58dp",
 		height: "46dp",
