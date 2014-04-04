@@ -59,12 +59,21 @@
 "#right": {
 	top: "0dp",
 	right: "0dp",
-	width: "48dp",
+	width: Ti.UI.SIZE,
 	height: "47dp"
 },
 "#rightImage": {
 	top: "9dp",
-	left: "10dp",
+	right: "9dp",
 	width: "28dp",
 	height: "28dp"
+},
+"#rightLabel": {
+	top: "14dp",
+	right: "9dp",
+	color: "white",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	font: {
+		fontSize: '18dp'
+	}
 }
