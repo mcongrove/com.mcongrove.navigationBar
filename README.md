@@ -39,7 +39,7 @@ Function           | Parameters   | Description
 -------------------|--------------|------------
 addNavigation      | `View`       | Adds [detail navigation widget](https://github.com/mcongrove/com.mcongrove.detailNavigation)
 removeNavigation   |              | Removes [detail navigation widget](https://github.com/mcongrove/com.mcongrove.detailNavigation)
-setBackgroundColor | `String`     | Background color
+setBackgroundColor | `String`, `String`     | Background color, Theme color ("black" | "white") _(optional)_
 setTitle           | `String`     | Title bar text
 showLeft           | `Object`     | `callback`: Click callback, `image`: Image to add
 showRight          | `Object`     | `callback`: Click callback, `image`: Image to add
@@ -51,6 +51,11 @@ showAction         | `Function`   | Click callback
 
 Changelog
 ---------
+* 1.2
+	* Improvements by [Stephen Woodford](https://github.com/swoodford5)
+	* Ability to manually set theme
+	* Android title view fixes
+	* Image path improvements
 * 1.1
 	* Initial commit as separate module; see [ChariTi](https://github.com/mcongrove/ChariTi/tree/master/app/widgets) for previous versions
 
