@@ -61,19 +61,19 @@ $.removeNavigation = function() {
 /**
  * Set the navigation bar's appearance
  * @param {Object} _params
- * @param {String} _.params.backgroundColor The hex color code (e.g. "#FFF")
+ * @param {String} _params.backgroundColor The hex color code (e.g. "#FFF")
  * @param {String} _params.theme Theme color ("black" | "white") (optional)
  * @param {Boolean} _params.hideShadow Whether or not to hide the bottom shadow (optional)
  */
 $.setAppearance = function(_params) {
-	$.Wrapper.backgroundColor = _.params.backgroundColor;
+	$.Wrapper.backgroundColor = _params.backgroundColor;
 
 	if (_params) {
 		if (_params.theme) {
 			theme = _params.theme;
 		} else {
 			// Checks the brightness of the background color, sets color of icons/text
-			if(hexToHsb(_.params.backgroundColor).b < 65) {
+			if(hexToHsb(_params.backgroundColor).b < 65) {
 				theme = "white";
 			} else {
 				theme = "black";
@@ -94,7 +94,7 @@ $.setBackgroundColor = function(_color) {
 	$.Wrapper.backgroundColor = _color;
 	
 	// Checks the brightness of the background color, sets color of icons/text
-	if(hexToHsb(_.params.backgroundColor).b < 65) {
+	if(hexToHsb(_color).b < 65) {
 		theme = "white";
 	} else {
 		theme = "black";
