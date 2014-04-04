@@ -1,6 +1,8 @@
 <Alloy>
 	<View id="Wrapper">
 		<View id="overlay">
+			<View id="titleView" />
+			
 			<View id="back" visible="false">
 				<ImageView id="backImage" />
 			</View>
