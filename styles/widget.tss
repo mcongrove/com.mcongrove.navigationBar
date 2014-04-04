@@ -21,7 +21,7 @@
 "#left": {
 	top: "0dp",
 	left: "0dp",
-	width: "48dp",
+	width: Ti.UI.SIZE,
 	height: "47dp"
 },
 "#leftImage": {
@@ -29,6 +29,14 @@
 	left: "9dp",
 	width: "28dp",
 	height: "28dp"
+},
+"#leftLabel": {
+	top: "14dp",
+	left: "9dp",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	font: {
+		fontSize: '18dp'
+	}
 },
 "#back": {
 	top: "0dp",
@@ -71,7 +79,6 @@
 "#rightLabel": {
 	top: "14dp",
 	right: "9dp",
-	color: "white",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
 	font: {
 		fontSize: '18dp'

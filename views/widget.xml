@@ -12,7 +12,8 @@
 			</View>
 			
 			<View id="left" visible="false">
-				<ImageView id="leftImage" />
+				<ImageView id="leftImage" visible="false" />
+				<Label id="leftLabel" visible="false" />
 			</View>
 			
 			<View id="right" visible="false">

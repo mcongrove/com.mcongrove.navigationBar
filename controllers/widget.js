@@ -87,33 +87,43 @@ $.setTitle = function(_text) {
 };
 
 /**
- * Sets the right label text
- * @param {Object} _text The right label text
- */
-$.setRightLabelText = function(_text) {
-	$.rightLabel.text = _text;
-};
-
-/**
  * Shows the left button
  * @param {Object} _params
  * @param {Function} _params.callback The function to run on left button press
- * @param {String} _params.image The image to show for the left button
+ * @param {String} _params.image The image to show for the left button (optional)
+ * @param {String} _params.text The text to show for the left button (optional)
  */
 $.showLeft = function(_params) {
 	if(_params && typeof _params.callback !== "undefined") {
 		$.left.visible = true;
-		$.leftImage.image = _params.image;
+		if (_params.image) {
+			$.leftImage.image = _params.image;
+			$.leftImage.visible = true;
+		} else {
+			$.leftLabel.text = _params.text ? _params.text : "Left";
+			$.leftLabel.color = theme == "white" ? "#FFF" : "#000";
+			alert(theme);
+			$.leftLabel.visible = true;
+		}
 
 		$.left.addEventListener("click", _params.callback);
 	}
 };
 
 /**
+ * Sets the left label text
+ * @param {Object} _text The left label text
+ */
+$.setLeftLabelText = function(_text) {
+	$.leftLabel.text = _text;
+};
+
+/**
  * Shows the right button
  * @param {Object} _params
  * @param {Function} _params.callback The function to run on right button press
- * @param {String} _params.image The image to show for the right button
+ * @param {String} _params.image The image to show for the right button (optional)
+ * @param {String} _params.text The text to show for the right button (optional)
  */
 $.showRight = function(_params) {
 	if(_params && typeof _params.callback !== "undefined") {
@@ -122,12 +132,21 @@ $.showRight = function(_params) {
 			$.rightImage.image = _params.image;
 			$.rightImage.visible = true;
 		} else {
-			$.rightLabel.text = _params.text;
+			$.rightLabel.text = _params.text ? _params.text : "Right";
+			$.rightLabel.color = theme == "white" ? "#FFF" : "#000";
 			$.rightLabel.visible = true;
 		}
 
 		$.right.addEventListener("click", _params.callback);
 	}
+};
+
+/**
+ * Sets the right label text
+ * @param {Object} _text The right label text
+ */
+$.setRightLabelText = function(_text) {
+	$.rightLabel.text = _text;
 };
 
 /**
