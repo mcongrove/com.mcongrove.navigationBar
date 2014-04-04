@@ -112,7 +112,7 @@ $.showLeft = function(_params) {
 
 /**
  * Sets the left label text
- * @param {Object} _text The left label text
+ * @param {String} _text The left label text
  */
 $.setLeftLabelText = function(_text) {
 	$.leftLabel.text = _text;
@@ -143,7 +143,7 @@ $.showRight = function(_params) {
 
 /**
  * Sets the right label text
- * @param {Object} _text The right label text
+ * @param {String} _text The right label text
  */
 $.setRightLabelText = function(_text) {
 	$.rightLabel.text = _text;
