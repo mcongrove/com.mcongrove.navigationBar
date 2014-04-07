@@ -41,10 +41,8 @@ addNavigation      | `View`       | Adds [detail navigation widget](https://gith
 removeNavigation   |              | Removes [detail navigation widget](https://github.com/mcongrove/com.mcongrove.detailNavigation)
 setBackgroundColor | `String`, `String`     | Background color, Theme color ("black" | "white") _(optional)_
 setTitle           | `String`     | Title bar text
-showLeft           | `Object`     | `callback`: Click callback, `image`: Image to add _(optional)_, `text`: Text to add _(optional)_
-setLeftLabelText   | `String`     | Left label text
-showRight          | `Object`     | `callback`: Click callback, `image`: Image to add _(optional)_, `text`: Text to add _(optional)_
-setRightLabelText  | `String`     | Right label text
+showLeft           | `Object`     | `callback`: Click callback, `image`: Image to add _(optional)_, `text`: Text to add _(optional)_, `font`: Font for label _(optional)_
+showRight          | `Object`     | `callback`: Click callback, `image`: Image to add _(optional)_, `text`: Text to add _(optional)_, `font`: Font for label _(optional)_
 showBack           | `Function`   | Click callback
 showNext           | `Function`   | Click callback
 showMenu           | `Function`   | Click callback

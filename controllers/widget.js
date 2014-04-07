@@ -92,30 +92,26 @@ $.setTitle = function(_text) {
  * @param {Function} _params.callback The function to run on left button press
  * @param {String} _params.image The image to show for the left button (optional)
  * @param {String} _params.text The text to show for the left button (optional)
+ * @param {String} _params.font The font to use for the label text (optional)
  */
 $.showLeft = function(_params) {
+	if (_params.image) {
+		$.leftImage.image = _params.image;
+		$.leftImage.visible = true;
+		$.leftLabel.visible = false;
+	} else {
+		$.leftLabel.text = _params.text ? _params.text : "Left";
+		$.leftLabel.font = _params.font ? _params.font : { fontSize: '18dp' };
+		$.leftLabel.color = theme == "white" ? "#FFF" : "#000";
+		$.leftLabel.visible = true;
+		$.leftImage.visible = false;
+	}
+	
 	if(_params && typeof _params.callback !== "undefined") {
 		$.left.visible = true;
-		if (_params.image) {
-			$.leftImage.image = _params.image;
-			$.leftImage.visible = true;
-		} else {
-			$.leftLabel.text = _params.text ? _params.text : "Left";
-			$.leftLabel.color = theme == "white" ? "#FFF" : "#000";
-			alert(theme);
-			$.leftLabel.visible = true;
-		}
-
+		
 		$.left.addEventListener("click", _params.callback);
 	}
-};
-
-/**
- * Sets the left label text
- * @param {String} _text The left label text
- */
-$.setLeftLabelText = function(_text) {
-	$.leftLabel.text = _text;
 };
 
 /**
@@ -124,29 +120,26 @@ $.setLeftLabelText = function(_text) {
  * @param {Function} _params.callback The function to run on right button press
  * @param {String} _params.image The image to show for the right button (optional)
  * @param {String} _params.text The text to show for the right button (optional)
+ * @param {String} _params.font The font to use for the label text (optional)
  */
 $.showRight = function(_params) {
+	if (_params.image) {
+		$.rightImage.image = _params.image;
+		$.rightImage.visible = true;
+		$.rightLabel.visible = false;
+	} else {
+		$.rightLabel.text = _params.text ? _params.text : "Right";
+		$.rightLabel.font = _params.font ? _params.font : { fontSize: '18dp' };
+		$.rightLabel.color = theme == "white" ? "#FFF" : "#000";
+		$.rightLabel.visible = true;
+		$.rightImage.visible = false;
+	}
+	
 	if(_params && typeof _params.callback !== "undefined") {
 		$.right.visible = true;
-		if (_params.image) {
-			$.rightImage.image = _params.image;
-			$.rightImage.visible = true;
-		} else {
-			$.rightLabel.text = _params.text ? _params.text : "Right";
-			$.rightLabel.color = theme == "white" ? "#FFF" : "#000";
-			$.rightLabel.visible = true;
-		}
-
+		
 		$.right.addEventListener("click", _params.callback);
 	}
-};
-
-/**
- * Sets the right label text
- * @param {String} _text The right label text
- */
-$.setRightLabelText = function(_text) {
-	$.rightLabel.text = _text;
 };
 
 /**
