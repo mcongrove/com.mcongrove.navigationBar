@@ -90,13 +90,26 @@ $.setTitle = function(_text) {
  * Shows the left button
  * @param {Object} _params
  * @param {Function} _params.callback The function to run on left button press
- * @param {String} _params.image The image to show for the left button
+ * @param {String} _params.image The image to show for the left button (optional)
+ * @param {String} _params.text The text to show for the left button (optional)
+ * @param {String} _params.font The font to use for the label text (optional)
  */
 $.showLeft = function(_params) {
+	if (_params.image) {
+		$.leftImage.image = _params.image;
+		$.leftImage.visible = true;
+		$.leftLabel.visible = false;
+	} else {
+		$.leftLabel.text = _params.text ? _params.text : "Left";
+		$.leftLabel.font = _params.font ? _params.font : { fontSize: '18dp' };
+		$.leftLabel.color = theme == "white" ? "#FFF" : "#000";
+		$.leftLabel.visible = true;
+		$.leftImage.visible = false;
+	}
+	
 	if(_params && typeof _params.callback !== "undefined") {
 		$.left.visible = true;
-		$.leftImage.image = _params.image;
-
+		
 		$.left.addEventListener("click", _params.callback);
 	}
 };
@@ -105,13 +118,26 @@ $.showLeft = function(_params) {
  * Shows the right button
  * @param {Object} _params
  * @param {Function} _params.callback The function to run on right button press
- * @param {String} _params.image The image to show for the right button
+ * @param {String} _params.image The image to show for the right button (optional)
+ * @param {String} _params.text The text to show for the right button (optional)
+ * @param {String} _params.font The font to use for the label text (optional)
  */
 $.showRight = function(_params) {
+	if (_params.image) {
+		$.rightImage.image = _params.image;
+		$.rightImage.visible = true;
+		$.rightLabel.visible = false;
+	} else {
+		$.rightLabel.text = _params.text ? _params.text : "Right";
+		$.rightLabel.font = _params.font ? _params.font : { fontSize: '18dp' };
+		$.rightLabel.color = theme == "white" ? "#FFF" : "#000";
+		$.rightLabel.visible = true;
+		$.rightImage.visible = false;
+	}
+	
 	if(_params && typeof _params.callback !== "undefined") {
 		$.right.visible = true;
-		$.rightImage.image = _params.image;
-
+		
 		$.right.addEventListener("click", _params.callback);
 	}
 };

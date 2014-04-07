@@ -12,11 +12,13 @@
 			</View>
 			
 			<View id="left" visible="false">
-				<ImageView id="leftImage" />
+				<ImageView id="leftImage" visible="false" />
+				<Label id="leftLabel" visible="false" />
 			</View>
 			
 			<View id="right" visible="false">
-				<ImageView id="rightImage" />
+				<ImageView id="rightImage" visible="false" />
+				<Label id="rightLabel" visible="false" />
 			</View>
 		</View>
 		
