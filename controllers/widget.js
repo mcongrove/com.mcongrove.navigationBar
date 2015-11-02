@@ -60,10 +60,11 @@ $.removeNavigation = function() {
 
 /**
  * Sets the background color
- * @param {Object} _color The hex color code (e.g. "#FFF")
+ * @param {Object} _colorPrimary The hex color code (e.g. "#FFF") Navbar
  * @param {Object} _theme The theme to set manually (e.g. "white" or "black")
+ * @param {Object} _colorSecondary The hex color code (e.g. "#FFF") Statusbar
  */
-$.setBackgroundColor = function(_colorPrimary, _colorSecondary, _theme) {
+$.setBackgroundColor = function(_colorPrimary, _theme, _colorSecondary) {
 	if (_colorSecondary) {
 		$.overlay.backgroundColor = _colorPrimary;
 		$.Wrapper.backgroundColor = _colorSecondary;
