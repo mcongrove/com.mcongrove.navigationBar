@@ -3,7 +3,8 @@
 	left: "0dp",
 	width: Ti.UI.FILL,
 	height: "47dp",
-	backgroundColor: "#000"
+	backgroundColor: "#000",
+	zIndex: 99
 },
 "#border": {
 	bottom: "0dp",
@@ -18,10 +19,24 @@
 	left: "0dp",
 	top: "0dp"
 },
+"#leftWarp": {
+	top: "0dp",
+	left: "0dp",
+	width: Titanium.UI.SIZE,
+	height: "47dp",
+	layout: "horizontal"
+},
+"#rightWarp": {
+	top: "0dp",
+	right: "0dp",
+	width: Titanium.UI.SIZE,
+	height: "47dp",
+	layout: "horizontal"
+},
 "#left": {
 	top: "0dp",
 	left: "0dp",
-	width: "48dp",
+	width: "0dp",
 	height: "47dp"
 },
 "#leftImage": {
@@ -33,7 +48,7 @@
 "#back": {
 	top: "0dp",
 	left: "0dp",
-	width: "48dp",
+	width: "0dp",
 	height: "47dp"
 },
 "#backImage": {
@@ -46,7 +61,7 @@
 "#next": {
 	top: "0dp",
 	right: "0dp",
-	width: "48dp",
+	width: "0dp",
 	height: "47dp"
 },
 "#nextImage": {
@@ -59,7 +74,7 @@
 "#right": {
 	top: "0dp",
 	right: "0dp",
-	width: "48dp",
+	width: "0dp",
 	height: "47dp"
 },
 "#rightImage": {

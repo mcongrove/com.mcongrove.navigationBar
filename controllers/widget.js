@@ -1,6 +1,6 @@
 /**
  * The navigation bar widget
- * 
+ *
  * @class Widgets.com.mcongrove.navigationBar
  */
 
@@ -63,14 +63,19 @@ $.removeNavigation = function() {
  * @param {Object} _color The hex color code (e.g. "#FFF")
  * @param {Object} _theme The theme to set manually (e.g. "white" or "black")
  */
-$.setBackgroundColor = function(_color, _theme) {
-	$.Wrapper.backgroundColor = _color;
+$.setBackgroundColor = function(_colorPrimary, _colorSecondary, _theme) {
+	if (_colorSecondary) {
+		$.overlay.backgroundColor = _colorPrimary;
+		$.Wrapper.backgroundColor = _colorSecondary;
+	} else {
+		$.Wrapper.backgroundColor = _colorPrimary;
+	}
 
 	if (_theme) {
 		theme = _theme;
 	} else {
 		// Checks the brightness of the background color, sets color of icons/text
-		if(hexToHsb(_color).b < 65) {
+		if(hexToHsb(_colorPrimary).b < 65) {
 			theme = "white";
 		} else {
 			theme = "black";
@@ -94,6 +99,7 @@ $.setTitle = function(_text) {
  */
 $.showLeft = function(_params) {
 	if(_params && typeof _params.callback !== "undefined") {
+		$.left.width = "48dp";
 		$.left.visible = true;
 		$.leftImage.image = _params.image;
 
@@ -109,10 +115,37 @@ $.showLeft = function(_params) {
  */
 $.showRight = function(_params) {
 	if(_params && typeof _params.callback !== "undefined") {
+		$.right.width = "48dp";
 		$.right.visible = true;
 		$.rightImage.image = _params.image;
 
 		$.right.addEventListener("click", _params.callback);
+	}
+};
+
+/**
+ * add Custom View to Left Wrapper
+ * @param {Object} _params
+ * @param {Function} _params.callback The function to run on right button press
+ * @param {String} _params.view The view to show
+ */
+$.addViewLeft = function(_params) {
+	if(_params && typeof _params.callback !== "undefined") {
+		$.leftWarp.add(_params.view);
+		_params.view.addEventListener("click", _params.callback);
+	}
+};
+
+/**
+ * add Custom View to Right Wrapper
+ * @param {Object} _params
+ * @param {Function} _params.callback The function to run on right button press
+ * @param {String} _params.view The view to show
+ */
+$.addViewRight = function(_params) {
+	if(_params && typeof _params.callback !== "undefined") {
+		$.rightWarp.add(_params.view);
+		_params.view.addEventListener("click", _params.callback);
 	}
 };
 
@@ -123,6 +156,7 @@ $.showRight = function(_params) {
 $.showBack = function(_callback) {
 	if(_callback && typeof _callback !== "undefined") {
 		$.backImage.image = theme == "white" ? WPATH("/images/white/back.png") : WPATH("/images/black/back.png");
+		$.back.width = "48dp";
 		$.back.visible = true;
 
 		$.back.addEventListener("click", _callback);
@@ -136,6 +170,7 @@ $.showBack = function(_callback) {
 $.showNext = function(_callback) {
 	if(_callback && typeof _callback !== "undefined") {
 		$.nextImage.image = theme == "white" ? WPATH("/images/white/next.png") : WPATH("/images/black/next.png");
+		$.next.width = "48dp";
 		$.next.visible = true;
 
 		$.next.addEventListener("click", _callback);
