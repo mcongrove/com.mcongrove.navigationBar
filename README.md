@@ -39,7 +39,7 @@ Function           | Parameters   | Description
 -------------------|--------------|------------
 addNavigation      | `View`       | Adds [detail navigation widget](https://github.com/mcongrove/com.mcongrove.detailNavigation)
 removeNavigation   |              | Removes [detail navigation widget](https://github.com/mcongrove/com.mcongrove.detailNavigation)
-setBackgroundColor | `String`, `String`     | Background color, Theme color ("black" | "white") _(optional)_
+setBackgroundColor | `String`, `String`, `String`     | Navbar Background color, StatusBar Background color _(optional)_, Theme color ("black" | "white") _(optional)_
 setTitle           | `String`     | Title bar text
 showLeft           | `Object`     | `callback`: Click callback, `image`: Image to add
 showRight          | `Object`     | `callback`: Click callback, `image`: Image to add
@@ -48,9 +48,16 @@ showNext           | `Function`   | Click callback
 showMenu           | `Function`   | Click callback
 showSettings       | `Function`   | Click callback
 showAction         | `Function`   | Click callback
+addViewLeft        | `Object`     | `callback`: Click callback, `view`: Add View to Left Wrapper
+addViewRight        | `Object`     | `callback`: Click callback, `view`: Add View to Right Warpper
+
 
 Changelog
 ---------
+* 1.3
+	* Layout chnage for multi items adding
+	* Method Add (addViewLeft, addViewRight)
+	* setBackgroundColor method modify for status bar background color
 * 1.2
 	* Improvements by [Stephen Woodford](https://github.com/swoodford5)
 	* Ability to manually set theme
